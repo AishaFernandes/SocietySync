@@ -2,13 +2,8 @@
 A cloud-hosted housing-society web app on AWS (region eu-north-1, Stockholm). Residents register, read notices and raise complaints with optional file attachments. Admins post notices and update complaint status.
 
 ## Architecture
-Browser -> nginx (:80) -> gunicorn (:8000) -> Flask app (EC2)
-                                                |-> RDS PostgreSQL (private)
-                                                |-> S3 (private bucket, presigned downloads)
-                                                -> SNS topic -> email + SQS queue -> worker -> RDS
-Configuration/secrets: Systems Manager Parameter Store (/societysync/*)
-Logs and alarms: CloudWatch
-Permissions: one IAM role on the EC2 instance (no access keys)
+![Uploading SocietySync AWS Architecture Diagram.png…]()
+
 
 ## Repository layout
 Path | Purpose
