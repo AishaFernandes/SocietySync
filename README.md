@@ -2,7 +2,8 @@
 A cloud-hosted housing-society web app on AWS (region eu-north-1, Stockholm). Residents register, read notices and raise complaints with optional file attachments. Admins post notices and update complaint status.
 
 ## Architecture
-![Uploading SocietySync AWS Architecture Diagram.png…]()
+![SocietySync Architecture Diagram](SocietySyncAWSArchitectureDiagram.png)
+
 
 
 ## Repository layout
