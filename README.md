@@ -2,9 +2,21 @@
 A cloud-hosted housing-society web app on AWS (region eu-north-1, Stockholm). Residents register, read notices and raise complaints with optional file attachments. Admins post notices and update complaint status.
 
 ## Architecture
-![SocietySync Architecture Diagram](main/SocietySync AWS Architecture Diagram.png)
+## Architecture
 
+The following diagram illustrates the architecture of SocietySync, a cloud-based housing society management system built using Flask and AWS.
 
+![SocietySync AWS Architecture Diagram](./SocietySync%20AWS%20Architecture%20Diagram.png)
+
+### Architecture Overview
+
+- **Application:** Flask hosted on Amazon EC2, served through Nginx and Gunicorn.
+- **Database:** Amazon RDS for PostgreSQL stores user accounts, notices, and complaints.
+- **File Storage:** Amazon S3 stores complaint attachments.
+- **Notifications:** Amazon SNS publishes events, while Amazon SQS queues messages for background processing.
+- **Background Processing:** A worker processes queued events and records notification logs in PostgreSQL.
+- **Configuration and Secrets:** AWS Systems Manager Parameter Store stores application configuration and secrets.
+- **Monitoring:** Amazon CloudWatch collects application and system logs.
 
 ## Repository layout
 Path | Purpose
